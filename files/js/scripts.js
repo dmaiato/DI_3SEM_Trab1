@@ -1,22 +1,28 @@
+
+// cores
 const bgColorInput = document.getElementById('bgColor');
 const borderColorInput = document.getElementById('borderColor');
+const textColorInput = document.getElementById('textColor');
+
+// caracteres
 const textContentInput = document.getElementById('textContent');
 const charCount = document.getElementById('charCount');
 const signatureCount = document.getElementById('signatureCount')
-const textColorInput = document.getElementById('textColor');
 const signatureInput = document.getElementById('signature');
 const fontStyleInput = document.getElementById('fontStyle');
-const cardWidthInput = document.getElementById('cardWidth');
-const cardPositionInput = document.getElementById('cardPosition');
-const cardImageInput = document.getElementById('cardImage');
-const removeImageButton = document.getElementById('removeImage');
-let cardImageElement = null;
 const maxChars = 500;
 const maxSignatureChars = 20;
 
+// imagem
+const imgSizeInput = document.getElementById('imgSize');
+const cardImageInput = document.getElementById('cardImageInput');
+const removeImageButton = document.getElementById('removeImage');
+let cardImageElement = false;
+
+// cartão
 const cardSignature = document.getElementById('cardSignature');
 const card = document.getElementById('card');
-const row = document.getElementById('row');
+const cardImg = document.getElementById('cardImg');
 const cardText = document.getElementById('cardText');
 
 function updateCard() {
@@ -24,14 +30,15 @@ function updateCard() {
   card.style.borderColor = borderColorInput.value;
   cardText.style.color = textColorInput.value;
 
-  cardText.textContent = textContentInput.value;
-  cardSignature.textContent = signatureInput.value;
+  cardText.textContent = textContentInput.value || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, sequi molestiae ratione explicabo eum aliquid nisi deleniti corporis obcaecati consequuntur corrupti neque eaque quo sint ipsum nemo architecto doloremque repellat?';
+  cardSignature.textContent = signatureInput.value || 'Fulano da Silva';
   cardSignature.style.color = textColorInput.value;
 
   cardText.style.fontFamily = fontStyleInput.value;
   cardSignature.style.fontFamily = fontStyleInput.value;
 
-  card.style.width = cardWidthInput.value + 'px';
+  cardImg.style.width = imgSizeInput.value + '%';
+  cardImg.style.objectPosition = 'center'
   card.style.margin = 'auto';
 }
 
@@ -41,11 +48,10 @@ function handleImageUpload(event) {
     const reader = new FileReader();
     reader.onload = function(e) {
       if (!cardImageElement) {
-        cardImageElement = document.createElement('img');
-        card.appendChild(cardImageElement);
+        cardImg.src = e.target.result;
+        cardImageElement = true;
       }
-      cardImageElement.src = e.target.result;
-      cardImageElement.style.display = 'block';
+      cardImg.src = e.target.result;
     };
     reader.readAsDataURL(file);
   }
@@ -53,9 +59,9 @@ function handleImageUpload(event) {
 
 function removeImage() {
   if (cardImageElement) {
-    card.removeChild(cardImageElement);
-    cardImageElement = null;
+    cardImageElement = false;
     cardImageInput.value = '';
+    cardImg.src = '';
     cardText.style.display = showTextInput.checked ? 'block' : 'none';
   }
 }
@@ -93,9 +99,6 @@ signatureInput.addEventListener('input', () => {
 });
 
 fontStyleInput.addEventListener('change', updateCard);
-cardWidthInput.addEventListener('input', updateCard);
 cardImageInput.addEventListener('change', handleImageUpload);
+imgSizeInput.addEventListener('input', updateCard)
 removeImageButton.addEventListener('click', removeImage);
-
-updateCard();
-updateCharCount();
