@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Controle Gráfico</title>
+    <title>Gift Card Maker</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="files/css/styles.css">
 </head>
@@ -20,8 +20,9 @@
         <div id="card" class="card text-center">
           <div class="card-body">
             <p id="cardText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, sequi molestiae ratione explicabo eum aliquid nisi deleniti corporis obcaecati consequuntur corrupti neque eaque quo sint ipsum nemo architecto doloremque repellat?</p>
-            <p id="cardSignature" class="mt-4"></p>
+            <p id="cardSignature" class="mt-4">Fulano da Silva</p>
           </div>
+          <img id="cardImg" src="files/img/doom_wiki.png" alt="imagem do cartao">
         </div>
       </div>
       <div id="options" class="col-md-4">
@@ -61,12 +62,12 @@
             </div>
           </div>
           <div class="form-group">
-              <label for="cardWidth">Largura do cartão:</label>
-              <input type="range" id="cardWidth" class="form-control-range" min="500" max="700" value="700">
+            <label for="cardImageInput">Imagem do selo:</label>
+            <input type="file" id="cardImageInput" class="form-control-file" accept="image/*">
           </div>
           <div class="form-group">
-              <label for="cardImage">Imagem do selo:</label>
-              <input type="file" id="cardImage" class="form-control-file" accept="image/*">
+              <label for="imgSize">Largura da imagem:</label>
+              <input type="range" id="imgSize" class="form-control-range cardImg" min="70" max="100" value="70">
           </div>
           <button type="button" id="removeImage" class="btn btn-danger mt-2">Remover Imagem</button>
         </form>
