@@ -1,0 +1,67 @@
+.text-center h1 {
+  margin-top: 40px;
+}
+
+#options {
+  background-color: rgb(87, 16, 252);
+  border-radius: 10px;
+  padding: 20px;
+  height: fit-content;
+  margin-bottom: 50px;
+}
+
+.optionsColor {
+  color: whitesmoke;
+}
+
+.form-group{
+  color: whitesmoke;
+}
+
+.form-group p {
+  color: whitesmoke;
+  font-size: small;
+  text-align: end;
+}
+
+.cardContainer {
+  padding-left: 0px;
+  padding-right: 50px;
+  margin-bottom: 50px;
+}
+
+.container .groupColors {
+  padding: 0;
+  align-content: start;
+  display: flex;
+  column-gap: 15px;
+}
+
+.card {
+  position: sticky;
+  height: auto;
+  color: black;
+  padding: 50px;
+}
+
+#card {
+  color: black;
+  border-color: #808080;
+  font-size: 18px;
+}
+
+#cardSignature {
+  font-size: 14px;
+  font-style: italic;
+  position: bottom;
+  text-align: right;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+@media (max-width: 576px) {
+  #card {
+    width: 100%;
+  }
+}

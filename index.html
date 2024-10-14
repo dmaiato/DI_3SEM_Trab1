@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle Gráfico</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="files/css/styles.css">
+</head>
+
+<body>
+  
+  <div class="text-center">
+    <h1>Gift Card Maker</h1>
+  </div>
+  
+  <div class="container mt-5">
+    <div id="row" class="row">          
+      <div class="col-md-8 cardContainer">
+        <div id="card" class="card text-center">
+          <div class="card-body">
+            <p id="cardText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, sequi molestiae ratione explicabo eum aliquid nisi deleniti corporis obcaecati consequuntur corrupti neque eaque quo sint ipsum nemo architecto doloremque repellat?</p>
+            <p id="cardSignature" class="mt-4"></p>
+          </div>
+        </div>
+      </div>
+      <div id="options" class="col-md-4">
+        <h3 class="optionsColor">Opções de decoração</h3>
+        <form id="controlForm">
+          <div class="form-group">
+            <label for="textContent">Texto:</label>
+            <textarea id="textContent" class="form-control" rows="3" maxlength="500" placeholder="Digite o texto aqui"></textarea>
+            <p id="charCount" class="form-text">500 caracteres</p>
+          </div>
+          <!--  -->
+          <div class="form-group">
+            <label for="signature">Assinatura:</label>
+            <textarea id="signature" class="form-control" rows="1" maxlength="20" placeholder="Digite sua assinatura"></textarea>
+            <p id="signatureCount" class="form-text">20 caracteres</p>
+          </div>
+          <div class="form-group">
+              <label for="fontStyle">Fonte do Texto:</label>
+              <select id="fontStyle" class="form-control">
+                  <option value="Arial">Arial</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="Courier New">Courier New</option>
+              </select>
+          </div>
+          <div class="container groupColors">
+            <div class="form-group">
+                <label for="bgColor">Cor de Fundo:</label>
+                <input type="color" id="bgColor" class="form-control" value="#ffffff">
+            </div>
+            <div class="form-group">
+                <label for="borderColor">Cor da Borda:</label>
+                <input type="color" id="borderColor" class="form-control" value="#808080">
+            </div>
+            <div class="form-group">
+                <label for="textColor">Cor do Texto:</label>
+                <input type="color" id="textColor" class="form-control" value="#000000">
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="cardWidth">Largura do cartão:</label>
+              <input type="range" id="cardWidth" class="form-control-range" min="500" max="700" value="700">
+          </div>
+          <div class="form-group">
+              <label for="cardImage">Imagem do selo:</label>
+              <input type="file" id="cardImage" class="form-control-file" accept="image/*">
+          </div>
+          <button type="button" id="removeImage" class="btn btn-danger mt-2">Remover Imagem</button>
+        </form>
+      </div>  
+
+
+    </div>
+  </div>    
+
+  <script src="files/js/scripts.js"></script>
+</body>
+
+</html>
