@@ -1,5 +1,5 @@
 
-// coreeeeeeeeeeeeeeeeeeeeeees
+// cores
 const bgColorInput = document.getElementById('bgColor');
 const borderColorInput = document.getElementById('borderColor');
 const textColorInput = document.getElementById('textColor');
