@@ -28,6 +28,7 @@
   padding-left: 0px;
   padding-right: 50px;
   margin-bottom: 50px;
+  justify-content: center;
 }
 
 .container .groupColors {
@@ -42,26 +43,71 @@
   height: auto;
   color: black;
   padding: 50px;
+  border-width: 2px;
 }
 
 #card {
   color: black;
   border-color: #808080;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
 }
 
 #cardSignature {
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
-  position: bottom;
   text-align: right;
   padding: 10px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card img {
+  display: block;
+  object-position: center;
+  margin: auto;
+  width: 70%;
 }
 
 @media (max-width: 576px) {
+  .cardContainer {
+    align-content: center;
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+  
   #card {
+    max-width: 100%;
+    padding: 15px;
+  }
+  
+  #options {
     width: 100%;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+}
+
+@media (max-width: 374px) {
+  .cardContainer {
+    align-content: center;
+    padding: 0px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  
+  #card {
+    max-width: 100%;
+    margin: auto;
+    padding: 15px;
+  }
+  
+  #options {
+    width: 100%;
+    margin: 0px;
   }
 }
